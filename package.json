@@ -1,0 +1,34 @@
+{
+  "name": "design-manual-scraper",
+  "version": "0.1.0",
+  "description": "Generate Design Manual components.json by scraping a website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape 'test/test.js' | faucet"
+  },
+  "author": "Arjen Scherff-de Water",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aratramba/design-manual-scraper.git"
+  },
+  "keywords": [
+    "documentation",
+    "docs",
+    "design",
+    "manual",
+    "design-manual",
+    "components.json"
+  ],
+  "bin": "cli.js",
+  "bugs": {
+    "url": "https://github.com/Aratramba/design-manual-scraper/issues"
+  },
+  "homepage": "https://github.com/Aratramba/design-manual-scraper",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.5.1"
+  }
+}
