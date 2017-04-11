@@ -37,7 +37,7 @@ Output will look something like this.
       "description": "foo description"
     },
     "file": "file.html",
-    "source": "<div>this is my component</div>"
+    "output": "<div>this is my component</div>"
   }
 ]
 ```
@@ -82,7 +82,7 @@ _multiple example_
 ---
 
 ### Capture multiple blocks
-The `capture` keyword specifies how many blocks after the comment will be returned. Use `capture: all` to capture the rest of the document. Use `capture: section` to capture all items until the next @component tag.
+The `capture` keyword specifies how many blocks after the comment will be returned. Use `capture: all` to capture the comments' siblings. Use `capture: section` to capture all items until the next @component tag.
 
 ```html
 <!-- @component
@@ -115,12 +115,10 @@ The `capture` keyword specifies how many blocks after the comment will be return
 var scraper = require('design-manual-scraper');
 
 scraper({
-    url: 'http://www.google.com/',
-    input: {
-        home: 'index.html',
-        news: 'news.html',
-        content: 'content.html'
-    },
+    hostname: 'google.com',
+    port: 80,
+    protocol: 'http:',
+    paths: [index.html', 'news.html', 'content.html'],
     keyword: '@component',
     block: '{{block}}',
     output: 'components.json',
