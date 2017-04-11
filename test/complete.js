@@ -1,7 +1,9 @@
 'use strict';
-/* global require */
 
 var test = require('tape');
+var fs = require('fs');
+var scraper = require('../index');
+var parser = require('../lib/parser');
 
 
 /**
@@ -9,6 +11,6 @@ var test = require('tape');
  */
 
 test('complete', function(assert){
+  assert.plan(1);
   assert.pass();
-  assert.end();
 });

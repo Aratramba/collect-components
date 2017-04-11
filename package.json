@@ -4,7 +4,7 @@
   "description": "Generate Design Manual components.json by scraping a website.",
   "main": "index.js",
   "scripts": {
-    "test": "tape 'test/test.js' | faucet"
+    "test": "tape 'test/*.js' | faucet"
   },
   "author": "Arjen Scherff-de Water",
   "repository": {
@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "faucet": "0.0.1",
-    "tape": "^4.5.1"
+    "tape": "^4.6.3"
   }
 }
