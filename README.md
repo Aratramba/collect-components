@@ -97,6 +97,32 @@ The `capture` keyword specifies how many blocks after the comment will be return
 <div>nope</div>
 ```
 
+```html
+<!-- @component
+    name: My Component
+    capture: section
+-->
+
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<!-- @component -->
+<div>nope</div>
+```
+
+```html
+<!-- @component
+    name: My Component
+    capture: all
+-->
+
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<!-- @component -->
+<div>yep</div>
+```
+
 
 ---
 
@@ -118,11 +144,10 @@ scraper({
     hostname: 'google.com',
     port: 80,
     protocol: 'http:',
-    paths: [index.html', 'news.html', 'content.html'],
+    paths: ['index.html', 'news.html', 'content.html'],
     keyword: '@component',
     block: '{{block}}',
     output: 'components.json',
     complete: function(){}
 });
-
 ```
