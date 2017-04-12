@@ -12,7 +12,7 @@ Use the keyword @component to flag html comments in your templates. Comments sho
 -->
 ```
 
-The immediate next DOM-node after the comment will be used as HTML-source for the component. If you need to capture multiple blocks, see [Capture multiple](#capture-multiple-blocks) blocks.
+The immediate next DOM-node after the comment will be used as HTML-source for the component. If you need to capture multiple blocks, see [Capture multiple](#capture-multiple-blocks) blocks. Any parameter in the component block will be add to the `meta` object in the output json.
 
 ```html
 <!-- @component
@@ -34,7 +34,8 @@ Output will look something like this.
   {
     "meta": {
       "name": "foo",
-      "description": "foo description"
+      "description": "foo description",
+      "param": "foo"
     },
     "file": "file.html",
     "output": "<div>this is my component</div>"
