@@ -96,15 +96,14 @@ function scraper(options){
     }
   );
 
-  return;
-  var output;
-
 
   /**
    * Init
    */
 
   function init(){
+    var output;
+    var components = [];
 
     // write stream to output file
     if(options.output){
@@ -122,7 +121,7 @@ function scraper(options){
 
       output.on('finish', function() {
         if (options.complete && typeof options.complete === 'function') {
-          options.complete();
+          options.complete(components);
         }
       });
     }
@@ -144,6 +143,7 @@ function scraper(options){
         if(options.output){
           // send to output
           output.write(JSON.stringify(docItem));
+          components.push(docItem);
         }
         // up counter
         ++counter;
@@ -156,7 +156,7 @@ function scraper(options){
       output.end();
     } else {
       if (options.complete && typeof options.complete === 'function') {
-        options.complete();
+        options.complete(components);
       }
     }
 
@@ -169,11 +169,3 @@ function scraper(options){
 }
 
 module.exports = scraper;
-
-scraper({
-  hostname: 'localhost',
-  protocol: 'http:',
-  port:  8000,
-  paths: ['examples.html'],
-  output: 'test/tmp/components.json'
-});

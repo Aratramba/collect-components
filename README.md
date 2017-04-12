@@ -137,6 +137,10 @@ The `capture` keyword specifies how many blocks after the comment will be return
 ---
 
 ## How to use
+```
+npm install design-manual-scraper
+```
+
 ```js
 var scraper = require('design-manual-scraper');
 
@@ -148,6 +152,6 @@ scraper({
     keyword: '@component',
     block: '{{block}}',
     output: 'components.json',
-    complete: function(){}
+    complete: function(components){}
 });
 ```

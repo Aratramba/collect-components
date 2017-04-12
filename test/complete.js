@@ -2,7 +2,6 @@
 
 var test = require('tape');
 var fs = require('fs');
-var scraper = require('../index');
 var parser = require('../lib/parser');
 
 
