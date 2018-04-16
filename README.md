@@ -146,10 +146,8 @@ npm install design-manual-scraper
 var scraper = require('design-manual-scraper');
 
 scraper({
-    hostname: 'google.com',
-    port: 80,
-    protocol: 'http:',
-    paths: ['index.html', 'news.html', 'content.html'],
+    url: 'https://rawgit.com/EightMedia/design-manual-scraper/master/test/fixtures/',
+    paths: ['examples.html', 'capture.html', 'yaml.html'],
     keyword: '@component',
     block: '{{block}}',
     output: 'components.json',

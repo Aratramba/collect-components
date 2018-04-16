@@ -2,7 +2,7 @@
 /* globals require, module */
 
 var fs = require('fs');
-var http = require('http');
+var request = require('request');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var through2 = require('through2');
@@ -23,8 +23,8 @@ function scraper(options){
     throw new Error('Design Manual Scraper requires a settings object.');
   }
 
-  if(typeof options.hostname === 'undefined'){
-    throw new Error('Design Manual Scraper requires settings.hostname to be set.');
+  if(typeof options.url === 'undefined'){
+    throw new Error('Design Manual Scraper requires settings.url to be set.');
   }
 
   if(typeof options.paths === 'undefined'){
@@ -33,20 +33,13 @@ function scraper(options){
 
   // options
   options = assign({
-    hostname: null,
-    port: 80,
-    protocol: 'http:',
+    url: null,
     paths: [],
     keyword: '@component',
     block: '{{block}}',
     output: null,
     complete: function() {}
   }, options);
-
-  var httpOptions = {
-    host: options.url,
-    port: options.port
-  };
 
   var counter = 0;
 
@@ -62,22 +55,16 @@ function scraper(options){
       return;
     }
 
-    // get url
-    http.get(assign(httpOptions, { path: options.paths[i] }), function(res) {
-      var data = '';
-      res.on('data', function(chunk) {
-        data += chunk;
-      });
-      res.on('end', function() {
-
-        // quick check for keyword
-        if (parser.scan(data, options.keyword)) {
-          register[options.paths[i]] = data;
-        }
+    request.get(options.url + options.paths[i], (error, response, data) => {
+      if (error) {
+        console.log(error);
         getHTML(++i);
-      });
-    }).on('error', function(e) {
-      console.log(e.message);
+        return;
+      }
+
+      if (parser.scan(data, options.keyword)) {
+        register[options.paths[i]] = data;
+      }
       getHTML(++i);
     });
   }
@@ -143,8 +130,8 @@ function scraper(options){
         if(options.output){
           // send to output
           output.write(JSON.stringify(docItem));
-          components.push(docItem);
         }
+        components.push(docItem);
         // up counter
         ++counter;
       });
@@ -155,7 +142,7 @@ function scraper(options){
       output.write(']');
       output.end();
     } else {
-      if (options.complete && typeof options.complete === 'function') {
+      if (options.complete && typeof options.complete === 'function') {        
         options.complete(components);
       }
     }

@@ -1,0 +1,234 @@
+[
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\">\n  {{block}}\n</div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\">\n  <p>this is my example</p>\n</div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\">\n  {{block}}\n  {{block}}\n</div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\">\n  <p>this is my example</p>\n  <p>this is my example</p>\n</div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\">\n  {{block}}\n</div>\n<div class=\"example\">\n  {{block}}\n</div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\">\n  <p>this is my example</p>\n</div>\n<div class=\"example\">\n  <p>this is my example</p>\n</div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\"></div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\"></div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\">{{block}}</div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\"><p>this is my example</p></div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "examples": [
+        "<div class=\"example\">{{block}}</div>\n"
+      ]
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\"><p>this is my example</p></div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "examples": [
+        "<div class=\"example\">\n  {{block}}\n</div>\n",
+        "<div class=\"example\">\n  {{block}}\n</div>\n"
+      ]
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\">\n  <p>this is my example</p>\n</div>\n\n<div class=\"example\">\n  <p>this is my example</p>\n</div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\">\n  {{noblock}}\n</div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\">\n  {{noblock}}\n</div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\" style=\"background: red;\">{{block}}</div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\" style=\"background: red;\"><p>this is my example</p></div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\">\n  <style type=\"text/css\">\n    background: red;\n  </style>\n  {{block}}\n</div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\">\n  <style type=\"text/css\">\n    background: red;\n  </style>\n  <p>this is my example</p>\n</div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "example": "<div class=\"example\">\n  <script>\n    alert('foo');\n  </script>\n  {{block}}\n</div>\n"
+    },
+    "file": "examples.html",
+    "output": "<div class=\"example\">\n  <script>\n    alert('foo');\n  </script>\n  <p>this is my example</p>\n</div>"
+  },
+  {
+    "meta": {
+      "name": "foo7",
+      "capture": "all"
+    },
+    "file": "capture.html",
+    "output": "<div>1</div>\n<div>2</div>\n<div>3</div>\n<div>4</div>\n<div>5</div>\n<div>6</div>"
+  },
+  {
+    "meta": {},
+    "file": "capture.html",
+    "output": "<div>6</div>"
+  },
+  {
+    "meta": {
+      "name": "foo1",
+      "capture": 3
+    },
+    "file": "capture.html",
+    "output": "<div>1</div>\n<div>2</div>\n<div>3</div>"
+  },
+  {
+    "meta": {
+      "name": "foo2",
+      "capture": -1
+    },
+    "file": "capture.html",
+    "output": ""
+  },
+  {
+    "meta": {
+      "name": "foo3",
+      "capture": 0
+    },
+    "file": "capture.html",
+    "output": ""
+  },
+  {
+    "meta": {
+      "name": "foo4",
+      "capture": "section"
+    },
+    "file": "capture.html",
+    "output": "<div>4</div>\n<div>5</div>\n<div>6</div>"
+  },
+  {
+    "meta": {
+      "name": "foo5",
+      "capture": 1
+    },
+    "file": "capture.html",
+    "output": "<div>7</div>"
+  },
+  {
+    "meta": {
+      "name": "foo6",
+      "capture": "section"
+    },
+    "file": "capture.html",
+    "output": "<style type=\"text/css\">\n    background: red;\n  </style>\n<script>\n    alert('hello')\n  </script>\n<div>8</div>"
+  },
+  {
+    "meta": {
+      "name": "foo6",
+      "capture": "all"
+    },
+    "file": "capture.html",
+    "output": "<div>1</div>\n<div>2</div>\n<div>3</div>\n<div>4<div>4b</div></div>\n<div>5\n    <!-- @component -->\n    <div>5b</div>\n  </div>"
+  },
+  {
+    "meta": {},
+    "file": "capture.html",
+    "output": "<div>4<div>4b</div></div>"
+  },
+  {
+    "meta": {},
+    "file": "capture.html",
+    "output": "<div>5\n    <!-- @component -->\n    <div>5b</div>\n  </div>"
+  },
+  {
+    "meta": {},
+    "file": "capture.html",
+    "output": "<div>5b</div>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "param1": "faa",
+      "param2": [
+        1,
+        2,
+        3
+      ]
+    },
+    "file": "yaml.html",
+    "output": "<p>This is my component</p>"
+  },
+  {
+    "meta": {},
+    "file": "yaml.html",
+    "output": "<p>This is my component</p>"
+  },
+  {
+    "meta": {},
+    "file": "yaml.html",
+    "output": "<p>This is my component</p>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "description": "this is my component description"
+    },
+    "file": "yaml.html",
+    "output": "<p>This is my component</p>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "description": "this is my component description"
+    },
+    "file": "yaml.html",
+    "output": "<p>This is my component</p>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "description": "this is my component description"
+    },
+    "file": "yaml.html",
+    "output": "<p>This is my component</p>"
+  },
+  {
+    "meta": {
+      "name": "foo",
+      "description": "this is my component description"
+    },
+    "file": "yaml.html",
+    "output": "<p>This is my component</p>"
+  }
+]
