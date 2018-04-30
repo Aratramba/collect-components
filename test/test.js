@@ -1,7 +1,6 @@
 var test = require('tape');
 var httpServer = require('http-server/lib/http-server');
 var scraper = require('../index');
-var request = require("request");
 var path = require('path');
 var fs = require('fs');
 
