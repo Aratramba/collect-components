@@ -54,7 +54,7 @@ _single example_
 <!-- @component
     name: My Component
     example: |
-        <div class="max-width: 300px">
+        <div style="max-width: 300px">
             {{block}}
         </div>
 -->
@@ -68,11 +68,11 @@ _multiple example_
     name: My Component
     examples: 
         - >
-            <div class="max-width: 300px">
+            <div style="max-width: 300px">
                 {{block}}
             </div>
         - >
-            <div class="max-width: 300px">
+            <div style="max-width: 300px">
                 {{block}}
             </div>
 -->
