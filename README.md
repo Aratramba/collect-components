@@ -1,5 +1,5 @@
-# Design Manual Scraper
-Generate components.json file for [Design Manual](https://github.com/EightMedia/design-manual) capturing HTML comments and their corresponding HTML components from a website.
+# Collect Components
+Captures tagged HTML comments and their corresponding HTML components from a website and generates components.json.
 
 
 ## Usage
@@ -139,14 +139,14 @@ The `capture` keyword specifies how many blocks after the comment will be return
 
 ## How to use
 ```
-npm install design-manual-scraper
+npm install collect-components
 ```
 
 ```js
-var scraper = require('design-manual-scraper');
+var scraper = require('collect-components');
 
 scraper({
-    url: 'https://rawgit.com/EightMedia/design-manual-scraper/master/test/fixtures/',
+    url: 'https://rawgit.com/EightMedia/collect-components/master/test/fixtures/',
     paths: ['examples.html', 'capture.html', 'yaml.html'],
     keyword: '@component',
     block: '{{block}}',

@@ -11,7 +11,7 @@ var parser = require('./lib/parser.js');
 
 
 /**
- * Design Manual components scraper
+ * Components scraper
  * returns a JSON stream
  * optionally writes a JSON array containing
  * all docs to an output file.
@@ -20,15 +20,15 @@ var parser = require('./lib/parser.js');
 function scraper(options){
 
   if(typeof options === 'undefined'){
-    throw new Error('Design Manual Scraper requires a settings object.');
+    throw new Error('settings object is required.');
   }
 
   if(typeof options.url === 'undefined'){
-    throw new Error('Design Manual Scraper requires settings.url to be set.');
+    throw new Error('settings.url is required.');
   }
 
   if(typeof options.paths === 'undefined'){
-    throw new Error('Design Manual Scraper requires settings.paths to be set.');
+    throw new Error('settings.paths is required');
   }
 
   // options
