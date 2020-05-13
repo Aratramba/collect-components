@@ -1,33 +1,32 @@
-'use strict';
-
-var test = require('tape');
-var fs = require('fs');
-var parser = require('../lib/parser');
-
+const test = require("tape");
+const fs = require("fs");
+const parser = require("../lib/parser");
 
 /**
  * Parse yaml
  */
 
-test('yaml', function(assert){
-  var src = fs.readFileSync('./test/fixtures/yaml.html').toString();
+test("yaml", function (assert) {
+  const src = fs.readFileSync("./test/fixtures/yaml.html").toString();
 
-  var components = parser.getComponents(src, 'test.html', { keyword: '@component' });
+  const components = parser.getComponents(src, "test.html", {
+    keyword: "@component",
+  });
 
-  var actual = components[0].meta.name;
-  var expected = 'foo';
+  let actual = components[0].meta.name;
+  let expected = "foo";
   assert.equal(actual, expected);
 
   actual = components[0].meta.param1;
-  expected = 'faa';
+  expected = "faa";
   assert.equal(actual, expected);
 
   actual = components[0].meta.param2;
-  expected = [1,2,3];
+  expected = [1, 2, 3];
   assert.deepEqual(actual, expected);
 
   actual = components[0].file;
-  expected = 'test.html';
+  expected = "test.html";
   assert.deepEqual(actual, expected);
 
   actual = components[1].meta;
@@ -39,35 +38,35 @@ test('yaml', function(assert){
   assert.deepEqual(actual, expected);
 
   actual = components[3].meta.name;
-  expected = 'foo';
+  expected = "foo";
   assert.deepEqual(actual, expected);
 
   actual = components[3].meta.description;
-  expected = 'this is my component description';
+  expected = "this is my component description";
   assert.deepEqual(actual, expected);
 
   actual = components[4].meta.name;
-  expected = 'foo';
+  expected = "foo";
   assert.deepEqual(actual, expected);
 
   actual = components[4].meta.description;
-  expected = 'this is my component description';
+  expected = "this is my component description";
   assert.deepEqual(actual, expected);
 
   actual = components[5].meta.name;
-  expected = 'foo';
+  expected = "foo";
   assert.deepEqual(actual, expected);
 
   actual = components[5].meta.description;
-  expected = 'this is my component description';
+  expected = "this is my component description";
   assert.deepEqual(actual, expected);
 
   actual = components[6].meta.name;
-  expected = 'foo';
+  expected = "foo";
   assert.deepEqual(actual, expected);
 
   actual = components[6].meta.description;
-  expected = 'this is my component description';
+  expected = "this is my component description";
   assert.deepEqual(actual, expected);
 
   assert.end();
