@@ -25,17 +25,17 @@
   "homepage": "https://github.com/EightMedia/collect-components",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^0.22.0",
-    "deep-equal": "^1.0.1",
-    "js-yaml": "^3.8.3",
-    "mkdirp": "^0.5.1",
+    "cheerio": "^1.0.0-rc.3",
+    "deep-equal": "^2.0.3",
+    "js-yaml": "^3.13.1",
+    "mkdirp": "^1.0.4",
     "object-assign": "^4.1.1",
-    "request": "^2.85.0",
-    "through2": "^2.0.3"
+    "request": "^2.88.2",
+    "through2": "^3.0.1"
   },
   "devDependencies": {
-    "faucet": "0.0.1",
-    "http-server": "^0.11.1",
-    "tape": "^4.6.3"
+    "faucet": "^0.0.1",
+    "http-server": "^0.12.3",
+    "tape": "^5.0.0"
   }
 }

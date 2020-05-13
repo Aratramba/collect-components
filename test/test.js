@@ -80,7 +80,7 @@ test('scrape live', function(assert){
   assert.plan(1);
 
   scraper({
-    url: 'https://rawgit.com/EightMedia/collect-components/master/test/fixtures/',
+    url: 'https://raw.githubusercontent.com/EightMedia/collect-components/master/test/fixtures/',
     paths: ['examples.html', 'capture.html', 'yaml.html'],
     complete: function(results) {
       assert.equal(results.length, 30);
