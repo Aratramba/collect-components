@@ -25,13 +25,13 @@
   "homepage": "https://github.com/EightMedia/collect-components",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "deep-equal": "^2.0.3",
-    "js-yaml": "^3.13.1",
+    "cheerio": "^1.0.0-rc.5",
+    "deep-equal": "^2.0.5",
+    "js-yaml": "^4.0.0",
     "mkdirp": "^1.0.4",
     "object-assign": "^4.1.1",
     "request": "^2.88.2",
-    "through2": "^3.0.1"
+    "through2": "^4.0.2"
   },
   "devDependencies": {
     "faucet": "^0.0.1",
