@@ -1,6 +1,6 @@
 {
   "name": "collect-components",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Generate components.json by scraping a website using tagged comments.",
   "main": "index.js",
   "scripts": {
